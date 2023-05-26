@@ -13,20 +13,21 @@ export const UseEffect = () => {
   // you show the text, wait a few seconds, then show it again?
   const [secondsAgo, setSecondsAgo] = useState(0);
   useEffect(() => {
-    
-  }, []);
+    setSecondsAgo(Date.now)
+  }, [secondsAgo, setSecondsAgo]);
 
   return (
-    <>
+    <div>
       <h2>UseEffect</h2>
 
       <div>
         <button className="btn btn-primary" onClick={onButtonClick}>
           {isSecondsAgoVisible ? 'Hide' : 'Show'}
         </button>
+        <p>Seconds Ago: <span>{Math.round((Date.now()-secondsAgo)/1000)}</span></p>
       </div>
 
       {/* TODO: Show how many seconds ago the text was shown. */}
-    </>
+    </div>
   );
 };

@@ -31,11 +31,20 @@ export const CustomHooks = () => {
 };
 
 const COLORS = ['red', 'green', 'blue'];
-
 // TODO: Update this custom hook to cycle through the COLORS array. When at the
 // end of the array, go back to the first choice.
 const useColor = () => {
   // BONUS: Can you make the colors change every second?
+  const [colorIndex, setColorIndex] = useState(0);
+  const color = COLORS[colorIndex];
 
-  return [];
+  const nextColor = () => {
+    if (colorIndex >= COLORS.length-1) {
+      setColorIndex(0);
+    } else {
+      setColorIndex(colorIndex + 1);
+    }
+  };
+
+  return [color, nextColor];
 };

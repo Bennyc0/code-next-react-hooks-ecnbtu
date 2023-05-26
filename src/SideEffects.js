@@ -14,10 +14,9 @@ export const SideEffects = () => {
   // username's length with respect to MIN_CHARS and MAX_CHARS.
   let statusEmoji = '';
   if (MIN_CHARS < username.length && username.length < MAX_CHARS) {
-    statusEmoji = '😎😎 Good 😎😎';
-  }
-  else {
-    statusEmoji = '😡😡 HEY! WATCH YOUR COUNT! 😡😡';
+    statusEmoji = '😎';
+  } else {
+    statusEmoji = '';
   }
 
   return (
